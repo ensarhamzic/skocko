@@ -102,9 +102,20 @@ function round() {
   }
 
   // Reseting stuff
+  choices = [
+    ...document.querySelectorAll(`#row${currRow} .guessDiv div[class*='g']`),
+  ];
+  let choicesNew = [];
+  // Replacing whole choices row to get rid of onclick events on them
+  for (let choice of choices) {
+    choicesNew.push(choice.cloneNode(true));
+    choice.parentNode.replaceChild(choicesNew[choicesNew.length - 1], choice);
+  }
   if (currRow < 7 && currRow > 0) {
+    // Removing arr class from arrow element and its onclick event
     let arrow = document.querySelector(`#arrow${currRow}`);
     arrow.classList.remove("arr");
+    arrow.removeEventListener("click", round);
   }
   currRow++;
   // if user wins, disable him to continue playing
@@ -161,9 +172,7 @@ function addItem(item) {
   if (numGuess === 4 && isOnceFull === false) {
     let arrow = document.querySelector(`#arrow${currRow}`);
     arrow.classList.add("arr");
-    arrow.addEventListener("click", () => {
-      round();
-    });
+    arrow.addEventListener("click", round);
     isOnceFull = true;
   }
 }
