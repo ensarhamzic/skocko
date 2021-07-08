@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+.rect {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.guessDiv,
+.answerDiv {
+  font-size: 2.5em;
+  text-align: center;
+  line-height: 4rem;
+}
+
+.answerDiv {
+  font-size: 4em;
+  line-height: 3.5rem;
+}
+
+.guessDiv div {
+  border: 2px solid black;
+}
+
+.answerDiv div {
+  border: 2px solid black;
+}
+
+.item {
+  border: 5px solid black;
+  width: 5rem;
+  height: 5rem;
+  font-size: 2.5em;
+  text-align: center;
+  line-height: 4rem;
+  margin-left: 5px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.item:hover {
+  border: 5px solid blue !important;
+  color: blue;
+}
+
+.arrow {
+  border: none !important;
+  width: 3rem;
+}
+
+.focus {
+  border: 5px solid red !important;
+}
+
+.correct {
+  background-color: red;
+}
+
+.semiCorrect {
+  background-color: yellow;
+}
+
+.arr {
+  color: green;
+}
+
+.arr:hover {
+  color: red;
+}
